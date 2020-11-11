@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "userName": "Владимир",
+      "firstName": "Владимир",
+      "lastName": "Безобразов",
+      "password": 123455434,
+      "total": 1000,
+      "history": [
+        {
+          "summ": 1000,
+          "details": "Перевод"
+        }
+      ],
+      "authorized": true
+    }
+  ]
+}
