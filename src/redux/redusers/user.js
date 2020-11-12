@@ -1,24 +1,18 @@
 import { createStore } from "redux";
 
 const initialState = {
-  items: {
-    name: "Владимир",
-    age: 28,
-  },
+  items: {},
 };
 
 const user = (state = initialState, action) => {
   switch (action.type) {
-    case "LOG_ON":
-      localStorage.setItem("newSession", true);
-      const session = localStorage.getItem("newSession");
-
+    case 'LOAD_USER':
       return {
         ...state,
         items: action.payload,
       };
 
-    case "LOG_OFF":
+    case 'LOG_OFF':
       return {
         items: {},
       };
