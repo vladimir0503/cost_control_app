@@ -1,20 +1,37 @@
 import { createStore } from "redux";
 
 const initialState = {
-  items: {},
+  user: {},
+  total: 0,
+  history: [],
 };
 
 const user = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOAD_USER':
+    case "LOAD_USER":
       return {
         ...state,
-        items: action.payload,
+        user: action.payload,
+        total: action.payload.total,
+        history: action.payload.history,
       };
 
-    case 'LOG_OFF':
+    case "NEW_OPERATION":
       return {
-        items: {},
+        ...state,
+        history: [...state.history, action.payload],
+      };
+
+    case "ADD_SUM":
+      return {
+        ...state,
+        total: state.total + action.payload,
+      };
+
+    case "REMOVE_SUM":
+      return {
+        ...state,
+        total: state.total - action.payload,
       };
 
     default:

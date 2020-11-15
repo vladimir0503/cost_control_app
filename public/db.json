@@ -5,14 +5,20 @@
       "firstName": "Владимир",
       "lastName": "Безобразов",
       "password": 123455434,
-      "total": 1000,
+      "total": 8748,
       "history": [
         {
-          "summ": 1000,
-          "details": "Перевод"
+          "sum": "-7000",
+          "comment": "Снятие",
+          "date": "15.11.2020"
+        },
+        {
+          "sum": "+8000",
+          "comment": "Внесение",
+          "date": "15.11.2020"
         }
       ],
-      "authorized": true
+      "id": 0
     }
   ]
 }

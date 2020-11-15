@@ -1,6 +1,6 @@
 import React from "react";
-import Autorization from "./components/Autorization";
-import Home from "./components/Home";
+import Autorization from "./components/pages/Autorization";
+import Home from "./components/pages/Home";
 
 function App() {
   const authData = localStorage.getItem("authData");
