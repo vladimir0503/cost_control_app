@@ -1,0 +1,35 @@
+.contentWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapper {
+  margin: 0 auto;
+}
+
+.formBlock {
+  width: 530px;
+  height: 480px;
+  background-color: #fff;
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.01), 0 25px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ebebeb;
+}
+
+.formHeader {
+  background-color: #db4c3f;
+  padding: 20px 30px;
+  color: white;
+  margin-bottom: 38px;
+  margin-bottom: 60px;
+}
+
+.formHeader h3 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: Roboto, system-ui, Tahoma, sans-serif;
+}
