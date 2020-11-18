@@ -4,6 +4,7 @@ const initialState = {
   user: {},
   total: 0,
   history: [],
+  isReffil: null
 };
 
 const user = (state = initialState, action) => {
@@ -26,12 +27,14 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         total: state.total + action.payload,
+        isReffil: true
       };
 
     case "REMOVE_SUM":
       return {
         ...state,
         total: state.total - action.payload,
+        isReffil: false
       };
 
     default:

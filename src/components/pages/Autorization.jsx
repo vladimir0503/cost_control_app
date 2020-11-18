@@ -53,7 +53,7 @@ function Autorization() {
           <label className="inputName">Имя</label>
           <input
             type="text"
-            className="authInp"
+            className="inp"
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></input>
@@ -62,7 +62,7 @@ function Autorization() {
           <label className="inputName">Пароль</label>
           <input
             type="password"
-            className="authInp"
+            className="inp"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
