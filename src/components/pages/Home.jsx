@@ -8,7 +8,7 @@ import NewOperation from "./NewOperation";
 
 function Home({ authData }) {
   const { userName, userPassword } = JSON.parse(authData);
-  const { user, total, history } = useSelector((state) => state);
+  const { user, total, history, isReffil } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -40,6 +40,8 @@ function Home({ authData }) {
     <div>
       <Header user={user} total={total} history={history} />
       <NewOperation
+        history={history}
+        reffil={isReffil}
         onAddSum={handleAddSum}
         onRemoveSum={handleRemoveSum}
         onNewOperation={handleNewOperation}

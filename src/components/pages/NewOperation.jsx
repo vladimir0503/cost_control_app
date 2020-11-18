@@ -1,31 +1,32 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useSelector } from "react-redux";
 
 import Form from "../Form";
 
-function NewOperation({ onAddSum, onRemoveSum, onNewOperation }) {
+function NewOperation({ onAddSum, onRemoveSum, onNewOperation, history, reffil }) {
   const [sum, setSum] = useState("");
   const [comment, setComment] = useState("");
 
+  const currentSum = !history.length ? 0 : history[history.length - 1].sum;
+  const currentDate = new Date().toLocaleDateString();
+
+  console.log(history);
+
+  const createNewOperation = (sum, comment, date) => ({
+    sum,
+    comment,
+    date: date
+  });
+
   const addSum = () => {
     onAddSum(+sum);
-    onNewOperation({
-      sum: `+${sum}`,
-      comment,
-      date: new Date().toLocaleDateString(),
-    });
+    onNewOperation(createNewOperation(`+${sum}`, comment, currentDate));
     setSum("");
     setComment("");
   };
 
   const removeSum = () => {
     onRemoveSum(+sum);
-    onNewOperation({
-      sum: `-${sum}`,
-      comment,
-      date: new Date().toLocaleDateString(),
-    });
+    onNewOperation(createNewOperation(`-${sum}`, comment, currentDate));
     setSum("");
     setComment("");
   };
@@ -33,12 +34,15 @@ function NewOperation({ onAddSum, onRemoveSum, onNewOperation }) {
   return (
     <div className="operationBlock">
       <Form name="Новая операция">
+        <div>
+          <h4>{currentSum}</h4>
+        </div>
         <div className="formItems">
           <div className="inputBlock">
             <label className="inputName">Сумма</label>
             <input
               type="number"
-              className="authInp"
+              className="inp"
               value={sum}
               onChange={(e) => setSum(e.target.value)}
             ></input>
