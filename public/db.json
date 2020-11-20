@@ -2,10 +2,12 @@
   "users": [
     {
       "userName": "Владимир",
-      "firstName": "Владимир",
-      "lastName": "Безобразов",
       "password": 123455434,
+<<<<<<< HEAD
       "total": 748,
+=======
+      "total": 1748,
+>>>>>>> develop
       "history": [
         {
           "sum": "-7000",
@@ -18,6 +20,7 @@
           "date": "15.11.2020"
         },
         {
+<<<<<<< HEAD
           "sum": "-8000",
           "comment": "Снятие",
           "date": "17.11.2020"
@@ -32,11 +35,35 @@
           "comment": "",
           "date": "17.11.2020",
           "isRefill": true
+=======
+          "sum": "+",
+          "comment": "",
+          "date": "18.11.2020"
+>>>>>>> develop
+        },
+        {
+          "sum": "-1000",
+          "comment": "снять",
+          "date": "18.11.2020"
+        },
+        {
+          "sum": "+1000",
+          "comment": "Внесение",
+          "date": "17.11.2020"
+        },
+        {
+          "sum": "+1000",
+          "comment": "",
+          "date": "17.11.2020",
+<<<<<<< HEAD
+=======
+          "isRefill": true
         },
         {
           "sum": "-1000",
           "comment": "",
           "date": "17.11.2020",
+>>>>>>> develop
           "isRefill": false
         },
         {
@@ -58,9 +85,103 @@
           "sum": "-5000",
           "comment": "test!!!",
           "date": "17.11.2020"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "sum": "-5000",
+          "comment": "",
+          "date": "20.11.2020"
+        },
+        {
+          "sum": "-1000",
+          "comment": "",
+          "date": "20.11.2020"
+        },
+        {
+          "sum": "-6000",
+          "comment": "",
+          "date": "20.11.2020"
+        },
+        {
+          "sum": "+1000",
+          "comment": "",
+          "date": "20.11.2020"
+>>>>>>> develop
         }
       ],
       "id": 0
+    },
+    {
+      "userName": "Иван",
+      "password": "qwerty",
+      "total": 1500,
+      "history": [
+        {
+          "sum": "+1000",
+          "comment": "Внесение",
+          "date": "20.11.2020"
+        },
+        {
+          "sum": "+500",
+          "comment": "",
+          "date": "20.11.2020"
+        }
+      ],
+      "id": 394830
+    },
+    {
+      "userName": "vovan",
+      "password": "qwerty2",
+      "total": 6000,
+      "history": [
+        {
+          "sum": "+5000",
+          "comment": "",
+          "date": "20.11.2020"
+        },
+        {
+          "sum": "+1000",
+          "comment": "",
+          "date": "20.11.2020"
+        }
+      ],
+      "id": 256868
+    },
+    {
+      "userName": "Темыч",
+      "password": "123",
+      "total": 0,
+      "history": [],
+      "id": 246685
+    },
+    {
+      "userName": "Олег",
+      "password": "Олег",
+      "total": 0,
+      "history": [],
+      "id": 630025
+    },
+    {
+      "userName": "Валера",
+      "password": "Валера",
+      "total": 0,
+      "history": [],
+      "id": 203514
+    },
+    {
+      "userName": "Игнатий",
+      "password": "Игнатий",
+      "total": 0,
+      "history": [],
+      "id": 516658
+    },
+    {
+      "userName": "Анатолий",
+      "password": "Анатолий",
+      "total": 0,
+      "history": [],
+      "id": 771009
     }
   ]
 }

@@ -6,8 +6,6 @@ function Header({ user, total, history }) {
     axios
       .put(`http://localhost:3001/users/${user.id}/`, {
         userName: user.userName,
-        firstName: user.firstName,
-        lastName: user.lastName,
         password: user.password,
         total: total,
         history: history,

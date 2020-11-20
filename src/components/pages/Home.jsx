@@ -18,6 +18,7 @@ function Home({ authData }) {
       )
       .then((res) => {
         dispatch(loadUser(res.data[0]));
+        console.log(res.data[0]);
       });
   }, []);
 
