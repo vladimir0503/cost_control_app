@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 import Form from "../Form";
 
-function NewOperation({ onAddSum, onRemoveSum, onNewOperation, history, reffil }) {
+function NewOperation({
+  onAddSum,
+  onRemoveSum,
+  onNewOperation,
+  history,
+  reffil,
+}) {
   const [sum, setSum] = useState("");
   const [comment, setComment] = useState("");
 
@@ -14,7 +20,7 @@ function NewOperation({ onAddSum, onRemoveSum, onNewOperation, history, reffil }
   const createNewOperation = (sum, comment, date) => ({
     sum,
     comment,
-    date: date
+    date: date,
   });
 
   const addSum = () => {
