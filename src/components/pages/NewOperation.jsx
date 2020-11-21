@@ -15,8 +15,6 @@ function NewOperation({
   const currentSum = !history.length ? 0 : history[history.length - 1].sum;
   const currentDate = new Date().toLocaleDateString();
 
-  console.log(history);
-
   const createNewOperation = (sum, comment, date) => ({
     sum,
     comment,
@@ -40,9 +38,9 @@ function NewOperation({
   return (
     <div className="operationBlock">
       <Form name="Новая операция">
-        <div>
+        {/* <div>
           <h4>{currentSum}</h4>
-        </div>
+        </div> */}
         <div className="formItems">
           <div className="inputBlock">
             <label className="inputName">Сумма</label>
