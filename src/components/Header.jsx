@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Header({ user, total, history }) {
   const logOff = () => {
@@ -23,10 +24,14 @@ function Header({ user, total, history }) {
     <div className="headerWrapper">
       <h2 className="savingInfo">Мои сбережения: {total} руб.</h2>
       <div className="savingBlock">
-        <button className="headerBtn">История операций</button>
-        <button className="headerBtn" onClick={logOff}>
-          Выйти
-        </button>
+        <Link to="/history">
+          <button className="headerBtn">История операций</button>
+        </Link>
+        <Link to="/">
+          <button className="headerBtn" onClick={logOff}>
+            Выйти
+          </button>
+        </Link>
       </div>
     </div>
   );

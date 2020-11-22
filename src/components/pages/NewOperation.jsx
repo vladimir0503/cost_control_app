@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+import { addSum, removeSum, newOperation } from "../../redux/actions";
 import Form from "../Form";
 
-function NewOperation({
-  onAddSum,
-  onRemoveSum,
-  onNewOperation,
-  history,
-  reffil,
-}) {
+function NewOperation() {
   const [sum, setSum] = useState("");
   const [comment, setComment] = useState("");
+
+  const { history, isReffil } = useSelector((state) => state);
+
+  const dispatch = useDispatch();
+
+  console.log(history);
 
   const currentSum = !history.length ? 0 : history[history.length - 1].sum;
   const currentDate = new Date().toLocaleDateString();
@@ -21,16 +23,18 @@ function NewOperation({
     date: date,
   });
 
-  const addSum = () => {
-    onAddSum(+sum);
-    onNewOperation(createNewOperation(`+${sum}`, comment, currentDate));
+  const handeAddSum = () => {
+    if (sum === "") return;
+    dispatch(addSum(+sum));
+    dispatch(newOperation(createNewOperation(`+${sum}`, comment, currentDate)));
     setSum("");
     setComment("");
   };
 
-  const removeSum = () => {
-    onRemoveSum(+sum);
-    onNewOperation(createNewOperation(`-${sum}`, comment, currentDate));
+  const handeRemoveSum = () => {
+    if (sum === "") return;
+    dispatch(removeSum(+sum));
+    dispatch(newOperation(createNewOperation(`-${sum}`, comment, currentDate)));
     setSum("");
     setComment("");
   };
@@ -59,10 +63,10 @@ function NewOperation({
               onChange={(e) => setComment(e.target.value)}
             ></textarea>
           </div>
-          <button onClick={addSum} className="formBtn">
+          <button onClick={handeAddSum} className="formBtn">
             Внести
           </button>
-          <button onClick={removeSum} className="formBtn">
+          <button onClick={handeRemoveSum} className="formBtn">
             Снять
           </button>
         </div>
