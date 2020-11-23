@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { clearHistory } from "../../redux/actions";
+import { clearHistory } from '../../redux/actions/history'
 import Form from "../Form";
 
 function History() {
@@ -20,15 +20,13 @@ function History() {
     <div className="operationBlock">
       <Form name="История операций">
         <div className="formItems">
-          <ul>
-            {historyArr.map((opr) => (
-              <li>
-                <p>{`Дата операции: ${opr.date}`}</p>
-                <p>{`Сумма ${opr.sum}`}</p>
-                <p>{`Комментарий: ${opr.comment}`}</p>
-              </li>
-            ))}
-          </ul>
+          {!historyArr.length ? <h2>Операций не было(</h2> : historyArr.map((opr) => (
+            <li className='historyItem'>
+              <p>Дата операции: <strong>{opr.date}</strong></p>
+              <p>Сумма операции: <strong>{opr.sum}</strong></p>
+              <p>Комментарий: <strong>{opr.comment}</strong></p>
+            </li>
+          ))}
           <button onClick={handleClearHistory} className="formBtn">
             Отчистить историю
           </button>

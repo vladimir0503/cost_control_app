@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Form from "../Form";
@@ -7,19 +7,32 @@ function Registartion() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  const [warning, setWarning] = useState({
-    info: "",
+  const [info, setInfo] = useState({
+    text: "",
     status: false,
   });
+
+  let timer;
+
+  const createInfo = (text) => {
+    setInfo({ text, status: true });
+    timer = setTimeout(() => setInfo({ text, status: false }), 2000);
+  };
 
   const handleSubmit = () => {
     const id = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
+    const arrInp = [name, password, repeatPassword];
+
+    for (let val of arrInp) {
+      if (val === '') {
+        createInfo('Не заполненны поля!');
+        return;
+      }
+    }
+
     if (password !== repeatPassword) {
-      setWarning({
-        info: "Пароли не совпадают!",
-        status: true,
-      });
+      createInfo('Пароли не совпадают!');
       return;
     }
 
@@ -27,10 +40,7 @@ function Registartion() {
       .get(`http://localhost:3001/users?password=${password}`)
       .then((res) => {
         if (res.data[0]) {
-          setWarning({
-            info: "Пользователь c таким паролем уже существует!",
-            status: true,
-          });
+          createInfo('Пользователь c таким паролем уже существует!');
         } else {
           axios
             .post("http://localhost:3001/users", {
@@ -55,10 +65,14 @@ function Registartion() {
       });
   };
 
+  useEffect(() => {
+    clearTimeout(timer);
+  });
+
   return (
     <Form name="Регистрация">
-      <div className={warning.status ? "warningOn" : "warningOff"}>
-        <h4>{warning.info}</h4>
+      <div className={info.status ? "infoOn" : "infoOff"}>
+        <h4>{info.text}</h4>
       </div>
       <div className="formItems">
         <div className="inputBlock">

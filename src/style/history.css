@@ -1,0 +1,10 @@
+.historyItem {
+    font-size: 17px;
+    font-weight: 400;
+    background-color: #fafafa;
+    list-style-type: none;
+    margin-bottom: 14px;
+    padding-left: 13px;
+    box-shadow: 1px 1px 8px -3px #000000;
+    border-radius: 7px;
+};
