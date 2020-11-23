@@ -37,6 +37,12 @@ const user = (state = initialState, action) => {
         isReffil: false,
       };
 
+    case "CLEAR_HISTORY":
+      return {
+        ...state,
+        history: [],
+      };
+
     default:
       return state;
   }

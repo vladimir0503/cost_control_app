@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
+import { Route } from "react-router-dom";
 
-import { loadUser, addSum, removeSum, newOperation } from "../../redux/actions";
+import { loadUser } from '../../redux/actions/loadUser'
 import Header from "../Header";
 import NewOperation from "./NewOperation";
+import History from "./History";
 
 function Home({ authData }) {
   const { userName, userPassword } = JSON.parse(authData);
@@ -18,34 +20,15 @@ function Home({ authData }) {
       )
       .then((res) => {
         dispatch(loadUser(res.data[0]));
+        console.log(res.data[0]);
       });
   }, []);
-
-  const handleAddSum = (sum) => {
-    console.log(sum);
-    dispatch(addSum(sum));
-  };
-
-  const handleRemoveSum = (sum) => {
-    console.log(sum);
-    dispatch(removeSum(sum));
-  };
-
-  const handleNewOperation = (obj) => {
-    console.log(obj);
-    dispatch(newOperation(obj));
-  };
 
   return (
     <div>
       <Header user={user} total={total} history={history} />
-      <NewOperation
-        history={history}
-        reffil={isReffil}
-        onAddSum={handleAddSum}
-        onRemoveSum={handleRemoveSum}
-        onNewOperation={handleNewOperation}
-      />
+      <Route path="/" component={NewOperation} exact />
+      <Route path="/history" component={History} exact />
     </div>
   );
 }
