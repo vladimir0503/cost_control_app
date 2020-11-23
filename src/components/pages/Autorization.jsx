@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Link } from 'react-router-dom'
+import { Route, Link } from "react-router-dom";
 
 import axios from "axios";
 import Form from "../Form";
@@ -72,7 +72,7 @@ function Autorization() {
         <button className="formBtn" onClick={handleSubmit}>
           Войти
         </button>
-        <Link to='/registration'>
+        <Link to="/registration">
           <button className="formBtn">Регистрация</button>
         </Link>
       </div>
