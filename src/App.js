@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
-import Autorization from "./components/pages/Autorization";
-=======
->>>>>>> develop
+
 import StartScreen from "./components/pages/StartScreen";
 import Home from "./components/pages/Home";
 
