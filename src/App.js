@@ -1,4 +1,5 @@
 import React from "react";
+
 import StartScreen from "./components/pages/StartScreen";
 import Home from "./components/pages/Home";
 

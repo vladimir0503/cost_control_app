@@ -3,7 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
 
-import { loadUser, addSum, removeSum, newOperation } from "../../redux/actions";
+import { loadUser } from '../../redux/actions/loadUser'
 import Header from "../Header";
 import NewOperation from "./NewOperation";
 import History from "./History";
