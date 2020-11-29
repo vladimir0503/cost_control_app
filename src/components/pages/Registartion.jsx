@@ -25,14 +25,14 @@ function Registartion() {
     const arrInp = [name, password, repeatPassword];
 
     for (let val of arrInp) {
-      if (val === '') {
-        createInfo('Не заполненны поля!');
+      if (val === "") {
+        createInfo("Не заполненны поля!");
         return;
       }
     }
 
     if (password !== repeatPassword) {
-      createInfo('Пароли не совпадают!');
+      createInfo("Пароли не совпадают!");
       return;
     }
 
@@ -40,7 +40,7 @@ function Registartion() {
       .get(`http://localhost:3001/users?password=${password}`)
       .then((res) => {
         if (res.data[0]) {
-          createInfo('Пользователь c таким паролем уже существует!');
+          createInfo("Пользователь c таким паролем уже существует!");
         } else {
           axios
             .post("http://localhost:3001/users", {

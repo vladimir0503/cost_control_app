@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -22,7 +21,7 @@ function Autorization() {
 
   const handleSubmit = () => {
     if (name === "" || password === "") {
-      createInfo('Не заполненны поля!');
+      createInfo("Не заполненны поля!");
       return;
     }
 
@@ -30,7 +29,7 @@ function Autorization() {
       .get(`http://localhost:3001/users?userName=${name}&password=${password}`)
       .then((res) => {
         if (!res.data[0]) {
-          createInfo('Не верное имя пользователя или пароль!');
+          createInfo("Неправильное имя пользователя или пароль!");
         } else {
           const authData = {
             userName: name,

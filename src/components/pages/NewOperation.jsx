@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addSum, removeSum } from '../../redux/actions/totalSum';
-import { newOperation } from '../../redux/actions/history';
+import { addSum, removeSum } from "../../redux/actions/totalSum";
+import { newOperation } from "../../redux/actions/history";
 import Form from "../Form";
 
 function NewOperation() {
@@ -37,9 +37,9 @@ function NewOperation() {
 
   const handeAddSum = () => {
     if (sum === "") {
-      createInfo('Введите сумму!');
+      createInfo("Введите сумму!");
       return;
-    };
+    }
     dispatch(addSum(+sum));
     dispatch(newOperation(createNewOperation(`+${sum}`, comment, currentDate)));
     createInfo(`Вы внесли ${sum} р.`);
@@ -48,17 +48,19 @@ function NewOperation() {
 
   const handeRemoveSum = () => {
     if (sum === "") {
-      createInfo('Введите сумму!');
+      createInfo("Введите сумму!");
       return;
     } else if (+sum > total) {
-      createInfo('На счету не достаточно средств!');
+      createInfo("На счету не достаточно средств!");
       return;
     } else {
       dispatch(removeSum(+sum));
-      dispatch(newOperation(createNewOperation(`-${sum}`, comment, currentDate)));
+      dispatch(
+        newOperation(createNewOperation(`-${sum}`, comment, currentDate))
+      );
       createInfo(`Вы сняли ${sum} р.`);
       clearInputs();
-    };
+    }
   };
 
   useEffect(() => {
@@ -69,7 +71,7 @@ function NewOperation() {
     <div className="operationBlock">
       <Form name="Новая операция">
         <div className={info.status ? "infoOn" : "infoOff"}>
-          <h4 style={{ color: isReffil ? 'green' : '' }}>{info.text}</h4>
+          <h4 style={{ color: isReffil ? "green" : "" }}>{info.text}</h4>
         </div>
         <div className="formItems">
           <div className="inputBlock">

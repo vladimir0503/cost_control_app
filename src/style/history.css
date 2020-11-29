@@ -1,10 +1,23 @@
 .historyItem {
-    font-size: 17px;
-    font-weight: 400;
-    background-color: #fafafa;
-    list-style-type: none;
-    margin-bottom: 14px;
-    padding-left: 13px;
-    box-shadow: 1px 1px 8px -3px #000000;
-    border-radius: 7px;
-};
+  width: 447px;
+  height: 87px;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: #fafafa;
+  list-style-type: none;
+  margin-top: 5px;
+  margin-left: 6px;
+  margin-bottom: 14px;
+  padding-left: 13px;
+  box-shadow: 1px 1px 8px -3px #000000;
+  border-radius: 7px;
+}
+
+.historyFull {
+  max-height: 389px;
+  overflow: auto;
+}
+
+.historyEmpty {
+  max-height: 389px;
+}

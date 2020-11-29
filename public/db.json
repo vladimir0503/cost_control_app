@@ -3,17 +3,12 @@
     {
       "userName": "Владимир",
       "password": 123455434,
-      "total": 110,
+      "total": 50000,
       "history": [
         {
-          "sum": "+100",
-          "comment": "",
-          "date": "23.11.2020"
-        },
-        {
-          "sum": "-49000",
-          "comment": "",
-          "date": "23.11.2020"
+          "sum": "+50000",
+          "comment": "Зарплата",
+          "date": "28.11.2020"
         }
       ],
       "id": 0
@@ -22,18 +17,7 @@
       "userName": "Иван",
       "password": "qwerty",
       "total": 1500,
-      "history": [
-        {
-          "sum": "+1000",
-          "comment": "Внесение",
-          "date": "23.11.2020"
-        },
-        {
-          "sum": "+500",
-          "comment": "внесение",
-          "date": "23.11.2020"
-        }
-      ],
+      "history": [],
       "id": 876366
     },
     {
@@ -65,25 +49,11 @@
       "id": 551922
     },
     {
-      "userName": "",
-      "password": "",
+      "userName": "Тема",
+      "password": "123",
       "total": 0,
       "history": [],
-      "id": 575009
-    },
-    {
-      "userName": "Толян",
-      "password": "йцукен",
-      "total": 0,
-      "history": [],
-      "id": 943881
-    },
-    {
-      "userName": "Саня",
-      "password": "forest",
-      "total": 0,
-      "history": [],
-      "id": 643407
+      "id": 889066
     }
   ]
 }
