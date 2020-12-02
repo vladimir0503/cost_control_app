@@ -13,9 +13,27 @@
   border-radius: 7px;
 }
 
+@media screen and (max-width: 1300px) {
+  .historyItem {
+    width: 318px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .historyItem {
+    width: 243px;
+  }
+}
+
 .historyFull {
   max-height: 389px;
   overflow: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .historyFull {
+    max-height: 198px;
+  }
 }
 
 .historyEmpty {

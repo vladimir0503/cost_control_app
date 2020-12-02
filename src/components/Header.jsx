@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import Popup from "./Popup";
+
 function Header({ user, total, history }) {
   const logOff = () => {
     axios
@@ -23,6 +25,7 @@ function Header({ user, total, history }) {
   return (
     <div className="headerWrapper">
       <h2 className="savingInfo">Мои сбережения: {total} руб.</h2>
+      <Popup popupLogOff={logOff} />
       <div className="savingBlock">
         <Link to="/history">
           <button className="headerBtn">История операций</button>

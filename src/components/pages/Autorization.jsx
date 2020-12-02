@@ -74,11 +74,11 @@ function Autorization() {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
-        <button className="formBtn" onClick={handleSubmit}>
+        <button className="btn" onClick={handleSubmit}>
           Войти
         </button>
         <Link to="/registration">
-          <button className="formBtn">Регистрация</button>
+          <button className="btn">Регистрация</button>
         </Link>
       </div>
     </Form>

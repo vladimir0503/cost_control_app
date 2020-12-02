@@ -91,10 +91,10 @@ function NewOperation() {
               onChange={(e) => setComment(e.target.value)}
             ></textarea>
           </div>
-          <button onClick={handeAddSum} className="formBtn">
+          <button onClick={handeAddSum} className="btn">
             Внести
           </button>
-          <button onClick={handeRemoveSum} className="formBtn">
+          <button onClick={handeRemoveSum} className="btn">
             Снять
           </button>
         </div>

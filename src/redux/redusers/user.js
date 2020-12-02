@@ -4,7 +4,7 @@ const initialState = {
   user: {},
   total: 0,
   history: [],
-  isReffil: null,
+  isReffil: false,
 };
 
 const user = (state = initialState, action) => {
