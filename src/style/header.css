@@ -8,6 +8,18 @@
   box-shadow: 0 4px 24px rgba(85, 118, 202, 0.1);
 }
 
+@media screen and (max-width: 1300px) {
+  .headerWrapper {
+    padding: 0 33px 0 27px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headerWrapper {
+    padding: 0 33px 0 16px;
+  }
+}
+
 .headerContent {
   display: flex;
 }
@@ -16,10 +28,23 @@
   display: flex;
 }
 
+@media screen and (max-width: 1300px) {
+  .savingBlock {
+    display: none;
+  }
+}
+
 .savingInfo {
   margin: 0;
   font-weight: 500;
   font-family: Roboto, system-ui, Tahoma, sans-serif;
+}
+
+@media screen and (max-width: 1300px) {
+  .savingInfo {
+    width: 216px;
+    font-size: 20px;
+  }
 }
 
 .headerBtn {

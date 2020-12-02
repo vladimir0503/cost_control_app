@@ -1,4 +1,4 @@
-.formBtn {
+.btn {
   backface-visibility: hidden;
   border-radius: 9999px;
   border: 1px solid rgb(245, 244, 242);
@@ -26,12 +26,12 @@
   cursor: pointer;
 }
 
-.formBtn:hover {
+.btn:hover {
   background-color: #fa877d;
   color: black;
 }
 
-.formBtn:active {
+.btn:active {
   background-color: #db4c3f;
   top: 2px;
   outline: none;

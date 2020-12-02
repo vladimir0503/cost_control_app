@@ -17,19 +17,19 @@ function Home({ authData }) {
   const dispatch = useDispatch();
 
   const getTimesOfDay = () => {
-    let hour = new Date().getHours();
+    const hour = new Date().getHours();
     const nigth = [0, 1, 2, 3, 4];
-    const morning = [5, 6, 7, 8, 9, 10, 11]
+    const morning = [5, 6, 7, 8, 9, 10, 11];
     const day = [12, 13, 14, 15, 16];
 
     if (nigth.includes(hour)) {
-      setTimesOfDay('Доброй ночи')
+      setTimesOfDay("Доброй ночи");
     } else if (morning.includes(hour)) {
-      setTimesOfDay('Доброе утро')
+      setTimesOfDay("Доброе утро");
     } else if (day.includes(hour)) {
-      setTimesOfDay('Добрый день')
+      setTimesOfDay("Добрый день");
     } else {
-      setTimesOfDay('Добрый вечер')
+      setTimesOfDay("Добрый вечер");
     }
   };
 

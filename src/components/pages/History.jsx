@@ -13,7 +13,7 @@ function History() {
   console.log(historyArr);
 
   const handleClearHistory = () => {
-    if (window.confirm('Вы уверенны?')) {
+    if (window.confirm("Вы уверенны?")) {
       dispatch(clearHistory());
     }
   };
@@ -22,30 +22,32 @@ function History() {
     <div className="operationBlock">
       <Form name="История операций">
         <div className="formItems">
-          <div className={historyArr.length ? 'historyFull' : 'historyEmpty'}>
+          <div className={historyArr.length ? "historyFull" : "historyEmpty"}>
             {!historyArr.length ? (
-              <div><h2>Операций не проводилось :(</h2></div>
+              <div>
+                <h2>Операций не проводилось :(</h2>
+              </div>
             ) : (
-                historyArr.map((opr, index) => (
-                  <li key={`${index}_${opr.date}`} className="historyItem">
-                    <p>
-                      Дата операции: <strong>{opr.date}</strong>
-                    </p>
-                    <p>
-                      Сумма операции: <strong>{opr.sum}</strong>
-                    </p>
-                    <p>
-                      Комментарий: <strong>{opr.comment}</strong>
-                    </p>
-                  </li>
-                ))
-              )}
+              historyArr.map((opr, index) => (
+                <li key={`${index}_${opr.date}`} className="historyItem">
+                  <p>
+                    Дата операции: <strong>{opr.date}</strong>
+                  </p>
+                  <p>
+                    Сумма операции: <strong>{opr.sum}</strong>
+                  </p>
+                  <p>
+                    Комментарий: <strong>{opr.comment}</strong>
+                  </p>
+                </li>
+              ))
+            )}
           </div>
-          <button onClick={handleClearHistory} className="formBtn">
+          <button onClick={handleClearHistory} className="btn">
             Отчистить историю
           </button>
           <Link to="/">
-            <button className="formBtn">Вернутся на главную</button>
+            <button className="btn">Вернутся на главную</button>
           </Link>
         </div>
       </Form>

@@ -19,12 +19,30 @@
   border: 1px solid #ebebeb;
 }
 
+@media screen and (max-width: 1300px) {
+  .formBlock {
+    width: 374px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formBlock {
+    width: 292px;
+  }
+}
+
 .formHeader {
   background-color: #db4c3f;
   padding: 20px 30px;
   color: white;
   margin-bottom: 38px;
   margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1300px) {
+  .formHeader {
+    padding: 20px 21px;
+  }
 }
 
 .formHeader h3 {

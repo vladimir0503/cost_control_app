@@ -102,7 +102,7 @@ function Registartion() {
             onChange={(e) => setRepeatPassword(e.target.value)}
           ></input>
         </div>
-        <button className="formBtn" onClick={handleSubmit}>
+        <button className="btn" onClick={handleSubmit}>
           Зарегистрироваться
         </button>
       </div>

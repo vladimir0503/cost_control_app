@@ -3,6 +3,7 @@
 @import "./button.css";
 @import "./form.css";
 @import "./history.css";
+@import "./popup.css";
 
 @keyframes info-anim-on {
   0% {
@@ -72,6 +73,7 @@ p {
 
 .helloScreenOn {
   position: absolute;
+  z-index: 1000;
   background-color: #fafafa;
   z-index: 1000;
   width: 100vw;
@@ -79,6 +81,12 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1300px) {
+  .helloScreenOn {
+    text-align: center;
+  }
 }
 
 .helloScreenOff {
@@ -91,6 +99,18 @@ p {
   justify-content: center;
   align-items: center;
   animation: greeting-screen 0.5s ease-out both;
+}
+
+@media screen and (max-width: 1300px) {
+  .helloScreenOff {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .helloScreenOff {
+    width: 300px;
+  }
 }
 
 .helloScreenOn h1 {
@@ -120,9 +140,27 @@ h4 {
   width: 469px;
 }
 
+@media screen and (max-width: 1300px) {
+  .formItems {
+    width: 336px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formItems {
+    width: 265px;
+  }
+}
+
 .formItems h2 {
   position: relative;
   bottom: 23px;
+}
+
+@media screen and (max-width: 1300px) {
+  .formItems h2 {
+    bottom: 7px;
+  }
 }
 
 .inputBlock {
