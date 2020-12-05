@@ -16,6 +16,7 @@ function Header({ user, total, history }) {
       .then((res) => {
         console.log(res.data);
         localStorage.clear();
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
