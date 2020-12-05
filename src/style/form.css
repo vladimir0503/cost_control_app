@@ -41,6 +41,7 @@
 
 @media screen and (max-width: 1300px) {
   .formHeader {
+    /* margin-bottom: 23px; */
     padding: 20px 21px;
   }
 }

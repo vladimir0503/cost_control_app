@@ -6,6 +6,7 @@ function Popup({ popupLogOff }) {
     const popupRef = useRef();
 
     const handleLogOff = () => {
+        setInitPopup(false);
         popupLogOff();
     };
 

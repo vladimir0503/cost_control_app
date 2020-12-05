@@ -107,14 +107,20 @@ p {
   }
 }
 
-@media screen and (max-width: 400px) {
-  .helloScreenOff {
-    width: 300px;
+.helloScreenOn h1 {
+  animation: greeting-anim 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@media screen and (max-width: 380px) {
+  .helloScreenOn h1 {
+    width: 364px;
   }
 }
 
-.helloScreenOn h1 {
-  animation: greeting-anim 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+@media screen and (max-width: 380px) {
+  .helloScreenOff h1 {
+    width: 364px;
+  }
 }
 
 h4 {
@@ -159,7 +165,8 @@ h4 {
 
 @media screen and (max-width: 1300px) {
   .formItems h2 {
-    bottom: 7px;
+    /* bottom: 7px; */
+    bottom: 23px;
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 import Form from "../Form";
 
@@ -105,6 +106,11 @@ function Registartion() {
         <button className="btn" onClick={handleSubmit}>
           Зарегистрироваться
         </button>
+        <Link to='/'>
+          <button className="btn" onClick={handleSubmit}>
+            Вернуться
+          </button>
+        </Link>
       </div>
     </Form>
   );
