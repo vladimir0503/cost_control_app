@@ -26,7 +26,7 @@ function Autorization() {
     }
 
     axios
-      .get(`http://localhost:3001/users?userName=${name}&password=${password}`)
+      .get(`/users?userName=${name}&password=${password}`)
       .then((res) => {
         if (!res.data[0]) {
           createInfo("Неправильное имя пользователя или пароль!");

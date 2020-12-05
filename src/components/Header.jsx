@@ -7,7 +7,7 @@ import Popup from "./Popup";
 function Header({ user, total, history }) {
   const logOff = () => {
     axios
-      .put(`http://localhost:3001/users/${user.id}/`, {
+      .put(`/users/${user.id}/`, {
         userName: user.userName,
         password: user.password,
         total: total,

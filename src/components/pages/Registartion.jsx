@@ -38,13 +38,13 @@ function Registartion() {
     }
 
     axios
-      .get(`http://localhost:3001/users?password=${password}`)
+      .get(`/users?password=${password}`)
       .then((res) => {
         if (res.data[0]) {
           createInfo("Пользователь c таким паролем уже существует!");
         } else {
           axios
-            .post("http://localhost:3001/users", {
+            .post("/users", {
               userName: name,
               password,
               total: 0,

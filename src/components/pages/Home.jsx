@@ -38,7 +38,7 @@ function Home({ authData }) {
 
     axios
       .get(
-        `http://localhost:3001/users?userName=${userName}&password=${userPassword}`
+        `/users?userName=${userName}&password=${userPassword}`
       )
       .then((res) => {
         dispatch(loadUser(res.data[0]));
