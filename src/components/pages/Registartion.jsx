@@ -60,7 +60,8 @@ function Registartion() {
               };
 
               localStorage.setItem("authData", JSON.stringify(authData));
-              window.location.reload();
+              window.history.back();
+              setTimeout(() => window.location.reload(), 1000);
             });
         }
       });
