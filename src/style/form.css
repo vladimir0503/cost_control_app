@@ -13,19 +13,7 @@
 @media screen and (max-width: 1300px) {
   .formWrapper {
     position: absolute;
-    top: 183px;
-  }
-}
-
-@media screen and (max-width: 376px) {
-  .formWrapper {
-    top: 173px
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .formWrapper {
-    top: 88px
+    top: 100px;
   }
 }
 
