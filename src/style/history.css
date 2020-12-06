@@ -1,6 +1,5 @@
 .historyItem {
   width: 447px;
-  height: 87px;
   font-size: 17px;
   font-weight: 400;
   background-color: #fafafa;
@@ -21,6 +20,7 @@
 
 @media screen and (max-width: 400px) {
   .historyItem {
+    padding-right: 13px;
     width: 243px;
   }
 }

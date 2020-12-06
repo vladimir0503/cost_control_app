@@ -108,7 +108,7 @@ function Registartion() {
           Зарегистрироваться
         </button>
         <Link to='/'>
-          <button className="btn" onClick={handleSubmit}>
+          <button className="btn">
             Вернуться
           </button>
         </Link>

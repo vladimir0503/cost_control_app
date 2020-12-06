@@ -9,7 +9,7 @@ function Autorization() {
   const [password, setPassword] = useState("");
   const [info, setInfo] = useState({
     text: "",
-    status: false,
+    status: false
   });
 
   let timer;

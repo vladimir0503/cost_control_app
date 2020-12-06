@@ -28,20 +28,20 @@ function History() {
                 <h2>Операций не проводилось :(</h2>
               </div>
             ) : (
-              historyArr.map((opr, index) => (
-                <li key={`${index}_${opr.date}`} className="historyItem">
-                  <p>
-                    Дата операции: <strong>{opr.date}</strong>
-                  </p>
-                  <p>
-                    Сумма операции: <strong>{opr.sum}</strong>
-                  </p>
-                  <p>
-                    Комментарий: <strong>{opr.comment}</strong>
-                  </p>
-                </li>
-              ))
-            )}
+                historyArr.map((opr, index) => (
+                  <li key={`${index}_${opr.date}`} className="historyItem">
+                    <p>
+                      Дата операции: <strong>{opr.date}</strong>
+                    </p>
+                    <p>
+                      Сумма операции: <strong>{opr.sum}</strong>
+                    </p>
+                    <p>
+                      Комментарий: <strong>{opr.comment}</strong>
+                    </p>
+                  </li>
+                ))
+              )}
           </div>
           <button onClick={handleClearHistory} className="btn">
             Отчистить историю
