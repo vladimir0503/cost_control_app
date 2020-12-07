@@ -4,26 +4,8 @@
       "userName": "Владимир",
       "password": 123455434,
       "total": 0,
-      "history": [
-        {
-          "sum": "+1000",
-          "comment": "",
-          "date": "06.12.2020"
-        },
-        {
-          "sum": "-1000",
-          "comment": "Выходил в магазин и потратил дофига бабла(",
-          "date": "06.12.2020"
-        }
-      ],
-      "id": 0
-    },
-    {
-      "userName": "admin",
-      "password": "admin",
-      "total": 0,
       "history": [],
-      "id": 750441
+      "id": 0
     }
   ]
 }
