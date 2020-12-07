@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "userName": "Владимир",
+            "password": 123455434,
+            "total": 0,
+            "history": [],
+            "id": 0
+        }
+    ]
+}
