@@ -17,16 +17,17 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const db = {
-    "users": [
+    users: [
         {
-            "userName": "Владимир",
-            "password": 123455434,
-            "total": 0,
-            "history": [],
-            "id": 0
+            userName: "Владимир",
+            password: 123455434,
+            total: 0,
+            history: [],
+            id: 0
         }
     ]
 }
+
 const router = jsonServer.router(db)
 const middleWares = jsonServer.defaults({
     static: './build',
