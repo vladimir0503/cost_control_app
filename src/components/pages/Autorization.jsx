@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 import Form from "../Form";
 
 function Autorization() {
@@ -26,22 +25,25 @@ function Autorization() {
     }
 
     axios
-      .get(`/users?userName=${name}&password=${password}`)
+      .get('https://finance-data-base-default-rtdb.firebaseio.com/users.json')
       .then((res) => {
-        if (!res.data[0]) {
-          createInfo("Неправильное имя пользователя или пароль!");
-        } else {
-          const authData = {
-            userName: name,
-            userPassword: password,
-            newSession: true,
-          };
-
-          localStorage.setItem("authData", JSON.stringify(authData));
-
-          setName("");
-          setPassword("");
-          document.location.reload();
+        for (let i = 0; i < res.data.length; i++) {
+          let userName = res.data[i].userName;
+          let userPassword = res.data[i].password;
+          if (userName == name && userPassword == password) {
+            const user = {
+              userName: name,
+              password: password,
+              total: res.data[i].total,
+              history: res.data[i].history,
+              id: i
+            }
+            localStorage.setItem("authData", JSON.stringify(user));
+            window.location.reload();
+            return
+          } else {
+            createInfo('Неправильное имя пользователя или пароль!')
+          }
         }
       });
   };

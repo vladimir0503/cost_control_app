@@ -22,8 +22,8 @@ function History() {
     <div className="operationBlock">
       <Form name="История операций">
         <div className="formItems">
-          <div className={historyArr.length ? "historyFull" : "historyEmpty"}>
-            {!historyArr.length ? (
+          <div className={historyArr ? "historyFull" : "historyEmpty"}>
+            {!historyArr ? (
               <div>
                 <h2>Операций не проводилось :(</h2>
               </div>

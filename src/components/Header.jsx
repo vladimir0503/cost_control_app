@@ -7,7 +7,7 @@ import Popup from "./Popup";
 function Header({ user, total, history }) {
   const logOff = () => {
     axios
-      .put(`/users/${user.id}/`, {
+      .patch(`https://finance-data-base-default-rtdb.firebaseio.com/users/${user.id}/.json`, {
         userName: user.userName,
         password: user.password,
         total: total,

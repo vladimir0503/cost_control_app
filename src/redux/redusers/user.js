@@ -20,7 +20,7 @@ const user = (state = initialState, action) => {
     case "NEW_OPERATION":
       return {
         ...state,
-        history: [...state.history, action.payload],
+        history: !state.history ? [action.payload] : [...state.history, action.payload],
       };
 
     case "ADD_SUM":

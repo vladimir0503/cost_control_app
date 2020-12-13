@@ -12,9 +12,14 @@ function Home({ authData }) {
   const [greeting, setGreeting] = useState(true);
   const [timesOfDay, setTimesOfDay] = useState(null);
 
-  const { userName, userPassword } = JSON.parse(authData);
+  // const { userName, userPassword } = JSON.parse(authData);
   const { user, total, history } = useSelector((state) => state);
   const dispatch = useDispatch();
+
+  const userData = JSON.parse(authData);
+
+  const state = useSelector(state => state);
+  console.log(state);
 
   const getTimesOfDay = () => {
     const hour = new Date().getHours();
@@ -36,13 +41,14 @@ function Home({ authData }) {
   useEffect(() => {
     getTimesOfDay();
 
-    axios
-      .get(
-        `/users?userName=${userName}&password=${userPassword}`
-      )
-      .then((res) => {
-        dispatch(loadUser(res.data[0]));
-      });
+    // axios
+    //   .get(
+    //     `http://localhost:3001/users?userName=${userName}&password=${userPassword}`
+    //   )
+    //   .then((res) => {
+    //     dispatch(loadUser(res.data[0]));
+    //   });
+    dispatch(loadUser(userData));
     setTimeout(() => setGreeting(!greeting), 2000);
   }, []);
 
