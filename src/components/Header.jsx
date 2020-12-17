@@ -14,7 +14,6 @@ function Header({ user, total, history }) {
         history: history,
       })
       .then((res) => {
-        console.log(res.data);
         localStorage.clear();
         window.location.reload();
       })

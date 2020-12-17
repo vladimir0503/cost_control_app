@@ -14,6 +14,7 @@ function Registartion() {
   });
 
   let timer;
+  let users;
 
   const createInfo = (text) => {
     setInfo({ text, status: true });
@@ -21,7 +22,6 @@ function Registartion() {
   };
 
   const handleSubmit = () => {
-    const id = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
 
     const arrInp = [name, password, repeatPassword];
 
@@ -38,32 +38,36 @@ function Registartion() {
     }
 
     axios
-      .get(`http://localhost:3001/users?password=${password}`)
+      .get('https://finance-data-base-default-rtdb.firebaseio.com/users.json')
       .then((res) => {
-        if (res.data[0]) {
-          createInfo("Пользователь c таким паролем уже существует!");
-        } else {
-          axios
-            .post("http://localhost:3001/users", {
-              userName: name,
-              password,
-              total: 0,
-              history: [],
-              id,
-            })
-            .then((res) => {
-              console.log(res.data);
+        let userName, userPassword;
+        users = res.data;
+        for (let i = 0; i < users.length; i++) {
+          userName = users[i].userName;
+          userPassword = users[i].password;
+          if (userName == name && userPassword == password) {
+            createInfo("Пользователь c таким паролем уже существует!");
+            return
+          };
+        };
 
-              const authData = {
-                userName: name,
-                userPassword: password,
-              };
+        const newUser = {
+          userName: name,
+          password,
+          total: 0,
+          history: [],
+          id: users.length
+        };
 
-              localStorage.setItem("authData", JSON.stringify(authData));
-              window.history.back();
-              setTimeout(() => window.location.reload(), 1000);
-            });
-        }
+        users.push(newUser);
+
+        axios
+          .put('https://finance-data-base-default-rtdb.firebaseio.com/users.json', users)
+          .then((res) => {
+            localStorage.setItem("authData", JSON.stringify(newUser));
+            window.history.back();
+            setTimeout(() => window.location.reload(), 1000);
+          })
       });
   };
 

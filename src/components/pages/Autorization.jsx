@@ -27,9 +27,10 @@ function Autorization() {
     axios
       .get('https://finance-data-base-default-rtdb.firebaseio.com/users.json')
       .then((res) => {
+        let userName, userPassword;
         for (let i = 0; i < res.data.length; i++) {
-          let userName = res.data[i].userName;
-          let userPassword = res.data[i].password;
+          userName = res.data[i].userName;
+          userPassword = res.data[i].password;
           if (userName == name && userPassword == password) {
             const user = {
               userName: name,
@@ -41,10 +42,9 @@ function Autorization() {
             localStorage.setItem("authData", JSON.stringify(user));
             window.location.reload();
             return
-          } else {
-            createInfo('Неправильное имя пользователя или пароль!')
-          }
-        }
+          };
+        };
+        createInfo('Неправильное имя пользователя или пароль!');
       });
   };
 
