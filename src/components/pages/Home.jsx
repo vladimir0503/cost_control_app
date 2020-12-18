@@ -41,13 +41,6 @@ function Home({ authData }) {
   useEffect(() => {
     getTimesOfDay();
 
-    // axios
-    //   .get(
-    //     `http://localhost:3001/users?userName=${userName}&password=${userPassword}`
-    //   )
-    //   .then((res) => {
-    //     dispatch(loadUser(res.data[0]));
-    //   });
     dispatch(loadUser(userData));
     setTimeout(() => setGreeting(!greeting), 2000);
   }, []);

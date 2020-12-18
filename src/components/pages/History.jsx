@@ -46,7 +46,7 @@ function History() {
           <button onClick={handleClearHistory} className="btn">
             Отчистить историю
           </button>
-          <Link to="/">
+          <Link to="/cost_control_app">
             <button className="btn">Вернутся на главную</button>
           </Link>
         </div>
