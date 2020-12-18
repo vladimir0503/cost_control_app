@@ -52,7 +52,7 @@ function Home({ authData }) {
       </div>
       <div>
         <Header user={user} total={total} history={history} />
-        <Route path="/" component={NewOperation} exact />
+        <Route path="/cost_control_app" component={NewOperation} exact />
         <Route path="/history" component={History} exact />
       </div>
     </>
