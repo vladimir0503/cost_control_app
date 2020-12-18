@@ -7,7 +7,7 @@ import Registartion from "./Registartion";
 function StartScreen() {
   return (
     <div>
-      <Route path="/cost_control_app" component={Autorization} exact />
+      <Route path="/" component={Autorization} exact />
       <Route path="/registration" component={Registartion} exact />
     </div>
   );
