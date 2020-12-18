@@ -111,7 +111,7 @@ function Registartion() {
         <button className="btn" onClick={handleSubmit}>
           Зарегистрироваться
         </button>
-        <Link to='/'>
+        <Link to='/cost_control_app'>
           <button className="btn">
             Вернуться
           </button>
