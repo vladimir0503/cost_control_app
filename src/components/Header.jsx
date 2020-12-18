@@ -30,7 +30,7 @@ function Header({ user, total, history }) {
         <Link to="/history">
           <button className="headerBtn">История операций</button>
         </Link>
-        <Link to="/">
+        <Link to="/cost_control_app">
           <button className="headerBtn" onClick={logOff}>
             Выйти
           </button>
