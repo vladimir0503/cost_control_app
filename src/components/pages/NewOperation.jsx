@@ -13,7 +13,7 @@ function NewOperation() {
     status: false,
   });
 
-  const { history, total, isReffil } = useSelector((state) => state);
+  const { total, isReffil } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const currentDate = new Date().toLocaleDateString();
